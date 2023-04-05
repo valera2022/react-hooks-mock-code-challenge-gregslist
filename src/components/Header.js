@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./Search";
 
-function Header({setSearchData}) {
+function Header({setSearchData,searchData}) {
   return (
     <header>
       <h1>
@@ -10,7 +10,7 @@ function Header({setSearchData}) {
         </span>
         gregslist
       </h1>
-      <Search setSearchData={setSearchData}/>
+      <Search setSearchData={setSearchData} searchData={searchData}  />
     </header>
   );
 }

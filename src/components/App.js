@@ -4,10 +4,11 @@ import ListingsContainer from "./ListingsContainer";
 
 function App() {
   const [searchData, setSearchData]= useState("")
+  
   return (
     <div className="app">
-      <Header setSearchData={setSearchData}/>
-      <ListingsContainer searchData={searchData} />
+      <Header setSearchData={setSearchData} searchData={searchData}/>
+      <ListingsContainer searchData={searchData}  />
     </div>
   );
 }

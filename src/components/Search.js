@@ -1,19 +1,23 @@
-import React from "react";
+import React,{useState} from "react";
 
-function Search({setSearchData}) {
+function Search({setSearchData,searchData}) {
+  const[search,setSearch]= useState("")
   // function handleSubmit(e){
   //   e.preventDefault();
   //   e.target.setAttribute("value", "e.target.value")
   //   console.log(e.target.value)}
 
+function handleChange(e){
+  e.preventDefault()
+  setSearch(e.target.value)
 
-  function handleChange(e,event) {
-    event.preventDefault();
-    console.log(event)
+}
+  function handleSubmit(e) {
+   
     e.preventDefault();
     console.log("submitted");
    console.log( e.target.value)
-   setSearchData(e.target.value)
+   setSearchData(search)
 
   }
     
@@ -21,15 +25,16 @@ function Search({setSearchData}) {
  
 
   return (
-    <form className="searchbar" onSubmit={handleChange}>
+    <form className="searchbar" onSubmit={handleSubmit}>
       <input
         type="text"
         id="search"
         placeholder="search free stuff"
-        // value={""}
+        value={search}
         onChange={handleChange}
+        
       />
-      <button type="submit">🔍</button>
+      <button type="submit"  >🔍</button>
     </form>
   );
 }
